@@ -135,3 +135,12 @@ The project is licensed under MIT License.
 * Website: [https://mazinahmed.net](https://mazinahmed.net)
 * Twitter: [https://twitter.com/mazen160](https://twitter.com/mazen160)
 * Linkedin: [http://linkedin.com/in/infosecmazinahmed](http://linkedin.com/in/infosecmazinahmed)
+
+
+
+# change Jeffrey44113:
+I use a ansible playbook to first get a correct output from the /etc/virtual/domainowners
+- name: create list of all domains on the server
+    ansible.builtin.command: cat /etc/virtual/domainowners | cut -d ":" -f 1 > /{{ working_dir }}/log4jhunt/domains.txt
+    register: domains
+with this I already have a correct domain list. Then I juse needed to convert the urls to https and then I can check them with the log4j-scan.. 
